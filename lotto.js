@@ -12,11 +12,13 @@
     function sameNum(n) {
     for (var i = 0; i < lotto.length; i++) {
     if (n === lotto[i]) {
-    return true;
+    var b = 1;
     } else {
-    return false;
+    var c = 1;
       }
      }
+    if (b > 0) {return true;}
+    else {return false;}
     }
     lotto.sort(function(a,b){
         return a-b ;});
