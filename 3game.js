@@ -1,4 +1,3 @@
-
 var e = 0; f = 0 ; g = 0;
 function game(){
     var c = prompt('몇 판 할래?');

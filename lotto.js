@@ -22,5 +22,5 @@
     }
     lotto.sort(function(a,b){
         return a-b ;});
-     alert(lotto);
+        alert(lotto);
     };
