@@ -3,6 +3,246 @@
 <head>
     <meta charset="utf-8"/>
     <script src="3game.js"></script>
+    <script src="js/jquery.js"></script>
+    <script>
+
+     $(function(){
+       $("#hm01").on("click", function(){
+         $("#hm02").attr({
+           "src": "images/hm_dc_02.jpg"
+         });
+         $("#hm03").attr({
+           "src":"images/hm_dc_03.jpg"
+         });
+
+       });
+
+
+       $("#hm02").on("click", function(){
+         $("#hm01").attr({
+           "src": "images/hm_dc_01.jpg"
+         })
+         $("#hm03").attr({
+           "src":"images/hm_dc_03.jpg"
+         })
+       })
+
+       $("#hm03").on("click", function(){
+         $("#hm01").attr({
+           "src":"images/hm_dc_01.jpg"
+         })
+         $("#hm02").attr({
+           "src":"images/hm_dc_02.jpg"
+         })
+       })
+
+       $("#onemore").on("click", function(){
+          $("#hm01").attr ({
+            "src": "images/hm01.jpg"
+          });
+          $("#hm02").attr ({
+            "src": "images/hm02.jpg"
+          });
+          $("#hm03").attr ({
+            "src": "images/hm03.jpg"
+          });
+          $("#com01").attr({
+            "src": "images/com01.jpg"
+          });
+          $("#com02").attr({
+            "src": "images/com02.jpg"
+          });
+          $("#com03").attr({
+            "src": "images/com03.jpg"
+          });
+        })
+          var hm_dc_01 = $("#hm01").attr("src")
+          if (hm_dc_01 == "images/hm_dc_01.jpg") {
+            $("#hm01").removeAttr("onclick");
+          };
+
+          var hm_dc_02 = $("#hm02").attr("src")
+          if (hm_dc_02 == "images/hm_dc_02.jpg") {
+            $("#hm02").removeAttr("onclick");
+          };
+
+          var hm_dc_03 = $("#hm03").attr("src")
+          if (hm_dc_03 == "images/hm_dc_03.jpg") {
+            $("#hm02").removeAttr("onclick");
+          };
+
+     });
+
+     var w = 0; d = 0 ; l = 0; count =0;
+
+     function hm01(){
+       var com = Math.ceil(3*Math.random());
+
+      if (com == 1 ) {
+        $(function(){
+          $("#com02").attr({
+              "src":"images/com_dc_02.jpg"
+            });
+          $("#com03").attr({
+              "src":"images/com_dc_03.jpg"
+            });
+
+          $("#informer").attr({
+                "src":"images/fi_dr.jpg"
+            });
+          });
+
+            d=d+1;
+
+        } else if (com==2) {
+          $(function(){
+            $("#com01").attr({
+                "src":"images/com_dc_01.jpg"
+              });
+            $("#com03").attr({
+                "src":"images/com_dc_03.jpg"
+              });
+
+              $("#informer").attr({
+                  "src":"images/fi_lose.jpg"
+              });
+            });
+
+              l=l+1;
+         } else  {
+           $(function(){
+             $("#com01").attr({
+                 "src":"images/com_dc_01.jpg"
+               });
+             $("#com02").attr({
+                 "src":"images/com_dc_02.jpg"
+               });
+
+               $("#informer").attr({
+                   "src":"images/fi_win.jpg"
+            });
+
+          });
+         w=w+1;
+       };
+     };
+
+      function hm02(){
+        var com = Math.ceil(3*Math.random());
+
+       if (com == 1 ) {
+         $(function(){
+           $("#com02").attr({
+               "src":"images/com_dc_02.jpg"
+             });
+           $("#com03").attr({
+               "src":"images/com_dc_03.jpg"
+             });
+
+           $("#informer").attr({
+                 "src":"images/fi_win.jpg"
+             });
+           });
+
+             w=w+1;
+
+         } else if (com==2) {
+           $(function(){
+             $("#com01").attr({
+                 "src":"images/com_dc_01.jpg"
+               });
+             $("#com03").attr({
+                 "src":"images/com_dc_03.jpg"
+               });
+
+               $("#informer").attr({
+                   "src":"images/fi_dr.jpg"
+               });
+             });
+
+               d=d+1;
+          } else  {
+            $(function(){
+              $("#com01").attr({
+                  "src":"images/com_dc_01.jpg"
+                });
+              $("#com02").attr({
+                  "src":"images/com_dc_02.jpg"
+                });
+
+                $("#informer").attr({
+                    "src":"images/fi_lose.jpg"
+             });
+
+           });
+          l=l+1;
+        };
+
+      };
+         function hm03() {
+           var com = Math.ceil(3*Math.random());
+
+          if (com == 1 ) {
+            $(function(){
+              $("#com02").attr({
+                  "src":"images/com_dc_02.jpg"
+                });
+              $("#com03").attr({
+                  "src":"images/com_dc_03.jpg"
+                });
+
+              $("#informer").attr({
+                    "src":"images/fi_lose.jpg"
+                });
+              });
+
+                l=l+1;
+
+            } else if (com==2) {
+              $(function(){
+                $("#com01").attr({
+                    "src":"images/com_dc_01.jpg"
+                  });
+                $("#com03").attr({
+                    "src":"images/com_dc_03.jpg"
+                  });
+
+                  $("#informer").attr({
+                      "src":"images/fi_win.jpg"
+                  });
+                });
+
+                  w=w+1;
+             } else  {
+               $(function(){
+                 $("#com01").attr({
+                     "src":"images/com_dc_01.jpg"
+                   });
+                 $("#com02").attr({
+                     "src":"images/com_dc_02.jpg"
+                   });
+
+                   $("#informer").attr({
+                       "src":"images/fi_dr.jpg"
+                });
+
+              });
+             d=d+1;
+           };
+
+         };
+
+
+
+         function result(){
+         alert( w+'번 이기고 '+d+'번 비기고 '+l+'번 졌습니다!');
+          w=0; d=0; l=0;
+
+         }
+
+
+    </script>
+
     <style>
     body {text-align: center;
           background-color: rgba(255, 255, 128, .5);}
@@ -12,7 +252,28 @@
     </head>
 <body>
   <h3> [1] 나왔다! 첫 제작 게임 "가위~ 바위, 보!!" </h3>
-      <input type="button" value="운명의 가위,바위,보" onclick="game()"><br><br><br>
-      <input type="button" value="결과를 알고 싶니?" onclick="result()"><br><br><br>
+      <!-- <input type="button" value="운명의 가위, 바위, 보~" onclick="game()"><br><br><br>
+      <input type="button" value="결과를 알고 싶니?" onclick="result()"><br><br><br> -->
+
+
+      <p>
+      <img id="com03" src="images/com03.jpg" value="가위" width="170">
+      <img id="com02" src="images/com02.jpg" value="바위" width="170">
+      <img id="com01" src="images/com01.jpg" value="보" width="170">
+      </p>
+      <table border ="1" align="center">
+        <tr>
+          <td><img id ="result" src="images/result.png" width="100" onclick="result()"></td>
+          <td><img id ="informer" src="images/fi_wt.jpg" width="300" height="200"></td>
+          <td><img id ="onemore" src="images/1moregame.png" width="100" onclick="onemore()"></td>
+        </tr>
+      </table>
+      <p>
+      <img id="hm01" src="images/hm01.jpg" value="가위" width="170" onclick="hm01()">
+      <img id="hm02" src="images/hm02.jpg" value="바위" width="170" onclick="hm02()">
+      <img id="hm03" src="images/hm03.jpg" value="보" width="170" onclick="hm03()">
+      </p>
+
+
 </body>
 </html>
