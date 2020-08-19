@@ -5,9 +5,14 @@
     <script src="3game.js"></script>
     <script src="js/jquery.js"></script>
     <script>
-
+      var seq2 = new Array("b");
      $(function(){
+
        $("#hm01").on("click", function(){
+         if (seq2[seq2.length-1] == "a") {
+           return;
+         };
+
          $("#hm02").attr({
            "src": "images/hm_dc_02.jpg"
          });
@@ -15,26 +20,35 @@
            "src":"images/hm_dc_03.jpg"
          });
 
+        seq2.push("a");
        });
 
 
        $("#hm02").on("click", function(){
+         if (seq2[seq2.length-1] == "a") {
+           return;
+         };
          $("#hm01").attr({
            "src": "images/hm_dc_01.jpg"
          })
          $("#hm03").attr({
            "src":"images/hm_dc_03.jpg"
          })
+           seq2.push("a");
        })
 
        $("#hm03").on("click", function(){
+         if (seq2[seq2.length-1] == "a") {
+           return;
+         };
          $("#hm01").attr({
            "src":"images/hm_dc_01.jpg"
          })
          $("#hm02").attr({
            "src":"images/hm_dc_02.jpg"
          })
-       })
+          seq2.push("a");
+       });
 
        $("#onemore").on("click", function(){
           $("#hm01").attr ({
@@ -58,28 +72,34 @@
           $("#informer").attr({
             "src": "images/fi_wt.jpg"
           });
+          seq2.push("b");
 
         })
-          var hm_dc_01 = $("#hm01").attr("src")
-          if (hm_dc_01 == "images/hm_dc_01.jpg") {
-            $("#hm01").removeAttr("onclick");
-          };
-
-          var hm_dc_02 = $("#hm02").attr("src")
-          if (hm_dc_02 == "images/hm_dc_02.jpg") {
-            $("#hm02").removeAttr("onclick");
-          };
-
-          var hm_dc_03 = $("#hm03").attr("src")
-          if (hm_dc_03 == "images/hm_dc_03.jpg") {
-            $("#hm02").removeAttr("onclick");
-          };
+          // var hm_dc_01 = $("#hm01").attr("src")
+          // if (hm_dc_01 == "images/hm_dc_01.jpg") {
+          //   $("#hm01").removeAttr("onclick");
+          // };
+          //
+          // var hm_dc_02 = $("#hm02").attr("src")
+          // if (hm_dc_02 == "images/hm_dc_02.jpg") {
+          //   $("#hm02").removeAttr("onclick");
+          // };
+          //
+          // var hm_dc_03 = $("#hm03").attr("src")
+          // if (hm_dc_03 == "images/hm_dc_03.jpg") {
+          //   $("#hm02").removeAttr("onclick");
+          // };
 
      });
 
      var w = 0; d = 0 ; l = 0; count =0;
-
+     var seq = new Array("b");
      function hm01(){
+
+       if (seq[seq.length-1] == "a") {
+          return;
+       };
+
        var com = Math.ceil(3*Math.random());
 
       if (com == 1 ) {
@@ -129,9 +149,16 @@
           });
          w=w+1;
        };
+
+       seq.push("a");
      };
 
       function hm02(){
+        if (seq[seq.length-1] == "a") {
+           return;
+        };
+
+
         var com = Math.ceil(3*Math.random());
 
        if (com == 1 ) {
@@ -181,9 +208,14 @@
            });
           l=l+1;
         };
+          seq.push("a");
 
       };
          function hm03() {
+           if (seq[seq.length-1] == "a") {
+              return;
+           };
+
            var com = Math.ceil(3*Math.random());
 
           if (com == 1 ) {
@@ -233,10 +265,12 @@
               });
              d=d+1;
            };
-
+           seq.push("a");
          };
 
-
+         function onemore(){
+           seq.push("b");
+         };
 
          function result(){
          alert( w+'번 이기고 '+d+'번 비기고 '+l+'번 졌습니다!');
